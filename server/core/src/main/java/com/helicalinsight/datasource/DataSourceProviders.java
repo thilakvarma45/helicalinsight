@@ -13,4 +13,5 @@ public interface DataSourceProviders {
     public static final String NONE = "none";
     public static final String CALCITE = "calcite";
     public static final String NOSQL = "noSql";
+    public static final String MONGODB = "mongodb";
 }

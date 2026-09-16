@@ -29,7 +29,7 @@ public class NoSqlDataSourceProperties extends TomcatJdbcDataSourceProperties {
             NoSQLLoader noSqlImplementation = NoSqlUtils.getNoSqlImplementation(subType);
             noSqlImplementation.loadToMiddleWare(formData);
         }
-        if(driverName!=null &&driverName.contains("nosql")) {
+        if(driverName!=null &&(driverName.contains("nosql") || driverName.contains("mongodb"))) {
             connection.setType(GlobalJdbcType.DYNAMIC_DATASOURCE);
             connection.setHiveReferenceId(-1);
             connection.setDataSourcePoolId("nosql_" + theId);

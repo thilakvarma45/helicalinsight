@@ -79,6 +79,7 @@ public class DataSourceUtils {
     	dsTypeMap.put("noSql",GlobalJdbcType.NOSQL_DATASOURCE);
     	dsTypeMap.put("hikari",GlobalJdbcType.DYNAMIC_DATASOURCE);
     	dsTypeMap.put("calcite",GlobalJdbcType.DYNAMIC_DATASOURCE);
+    	dsTypeMap.put("mongodb",GlobalJdbcType.NOSQL_DATASOURCE);
     }
 
 	/**

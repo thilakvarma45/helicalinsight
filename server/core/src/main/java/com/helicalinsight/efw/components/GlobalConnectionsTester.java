@@ -34,7 +34,8 @@ public class GlobalConnectionsTester implements IComponent {
 
 
         //Code to check the connection testing for MongoDb and other NoSql
-        if (DataSourceProviders.NOSQL.equalsIgnoreCase(dataSourceProvider)) {
+        if (DataSourceProviders.NOSQL.equalsIgnoreCase(dataSourceProvider) ||
+            DataSourceProviders.MONGODB.equalsIgnoreCase(dataSourceProvider)) {
             return DataSourceUtils.testNosqlDS(formDataJson);
         }
 

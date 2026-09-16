@@ -15,4 +15,5 @@ public interface GlobalJdbcType {
     public static final String MANAGED_GROOVY_DATASOURCE = "sql.jdbc.groovy.managed";
     public static final String GROOVY_DATASOURCE = "sql.jdbc.groovy";
     public static final String PLAIN_JDBC = "sql.jdbc";
+    public static final String MONGODB_DATASOURCE = "mongodbDataSource";
 }

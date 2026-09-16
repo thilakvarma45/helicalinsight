@@ -49,7 +49,7 @@ public class EfwdConnectionTester implements IComponent {
 
         if (formDataJson.has("driverName")) {
             String driverName = formDataJson.get("driverName").asText();
-            if (driverName.contains("nosql") && type.equals("sql.jdbc")) {
+            if ((driverName.contains("nosql") || driverName.contains("mongodb")) && type.equals("sql.jdbc")) {
                 return DataSourceUtils.testNosqlDS(new Gson().fromJson(formDataJson.toString(),JsonObject.class));
             }
             if (driverName.startsWith(JsonUtils.getHiMiddleWareName()) && !driverName.contains("nosql")) {

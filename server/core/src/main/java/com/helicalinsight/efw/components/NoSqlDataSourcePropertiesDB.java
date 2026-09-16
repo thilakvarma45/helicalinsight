@@ -188,7 +188,7 @@ public class NoSqlDataSourcePropertiesDB implements DsOperation {
         String subType = getSubType(formData);
         connection.setSubType(subType);
         connection.setHiveReferenceId(GsonUtility.optInt(formData, "hiveReferenceId"));
-        if (driverName != null && driverName.contains("nosql")) {
+        if (driverName != null && (driverName.contains("nosql") || driverName.contains("mongodb"))) {
             connection.setHiveReferenceId(-1);
             connection.setDataSourcePoolId("nosql_" + id);
         } else {
@@ -237,7 +237,7 @@ public class NoSqlDataSourcePropertiesDB implements DsOperation {
         globalConnection.setCreatedBy(createdByUser);
         globalConnection.setVendor(GsonUtility.optString(formData,"vendorName"));
         globalConnection.setCreatedDate(new Date());
-        if (driverName != null && driverName.contains("nosql")) {
+        if (driverName != null && (driverName.contains("nosql") || driverName.contains("mongodb"))) {
             globalConnection.setType(GlobalJdbcType.DYNAMIC_DATASOURCE);
         } else {
             globalConnection.setType(GlobalJdbcType.NOSQL_DATASOURCE);
@@ -273,7 +273,7 @@ public class NoSqlDataSourcePropertiesDB implements DsOperation {
         String subType = getSubType(formData);
         connection.setSubType(subType);
         connection.setHiveReferenceId(GsonUtility.optInt(formData, "hiveReferenceId"));
-        if (driverName != null && driverName.contains("nosql")) {
+        if (driverName != null && (driverName.contains("nosql") || driverName.contains("mongodb"))) {
             connection.setHiveReferenceId(-1);
             connection.setDataSourcePoolId("nosql_replace");
         } else {

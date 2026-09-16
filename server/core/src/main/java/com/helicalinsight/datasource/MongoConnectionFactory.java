@@ -67,10 +67,12 @@ public class MongoConnectionFactory extends DatabaseConnectionFactory {
 				driverClassName = connectionDetails.get("driverName").getAsString();
 			}
 
-			if ("mongodb.jdbc.MongoDriver".equalsIgnoreCase(driverClassName)) {
+			if ("mongodb.jdbc.MongoDriver".equalsIgnoreCase(driverClassName)
+					|| "com.helicalinsight.nosql.mongodb".equalsIgnoreCase(driverClassName)
+					|| "com.helicalinsight.nosql.mongo".equalsIgnoreCase(driverClassName)) {
 				DriverConnection driverConnection = new DriverConnection();
 				driverConnection.setConnection(null);
-				driverConnection.setDriverClass("mongodb.jdbc.MongoDriver");
+				driverConnection.setDriverClass(driverClassName);
 				return driverConnection;
 
 			}
